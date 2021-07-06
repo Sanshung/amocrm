@@ -50,6 +50,7 @@ class EbClientAmocrm{
         curl_close($curl);
         $code = (int)$code;
         $response = json_decode($out, true);
+        print_r($response);
         $r = array(
             "access_token" => $response['access_token'], //Access токен
             "refresh_token" => $response['refresh_token'], //Refresh токен
@@ -214,6 +215,7 @@ class EbClientAmocrm{
                 'name'=>$config['name'],
                 'sale'=>$config['sale'],
                 "contacts_id"=>$config['contacts_id'],
+                "pipeline_id"=>$config['pipeline_id'],
                 'custom_fields' => array(
                 ),
             ),
